@@ -1,39 +1,72 @@
 #include "lists.h"
-#include <string.h>
-#include <stdlib.h>
+
+listint_t *reverse_listint(listint_t **head);
+int is_palindrome(listint_t **head);
 
 /**
- * is_palindrome - function checks if a list is a palindrome
- * @head: points to head of the list
- * Return: 0 if list not a palindrome 1 if True
+ * reverse_listint - function reverses a singly-linked listint_t list
+ * @head: points to starting node of the list to reverse.
+ *
+ * Return: pointer to the head of the reversed list
+ */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *nde = *head, *nextNde, *before = NULL;
+
+	while (nde)
+	{
+		nextNde = nde->next;
+		nde->next = before;
+		before = nde;
+		nde = nextNde;
+	}
+
+	*head = before;
+	return (*head);
+}
+
+/**
+ * is_palindrome - Checks if a singly linked list is a palindrome
+ * @head: points to the head of the linked list
+ *
+ * Return: If the linked list is not a palindrome - 0.
+ *         If the linked list is a palindrome - 1.
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *temp = *head;
-	int ndes = 0, x = 0, *arr = NULL;
+	listint_t *temp, *revrse, *midle;
+	size_t sze = 0, x;
 
-	if (*head == NULL || head == NULL || (*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	while (temp)
-	{
-		ndes++;
-		temp = temp->next;
-	}
-	arr = malloc(sizeof(int) * ndes);
+
 	temp = *head;
 	while (temp)
 	{
-		arr[x++] = temp->n;
+		sze++;
 		temp = temp->next;
 	}
-	for (x = 0; x < ndes / 2; x++)
+
+	temp = *head;
+	for (x = 0; x < (sze / 2) - 1; x++)
+		temp = temp->next;
+
+	if ((sze % 2) == 0 && temp->n != temp->next->n)
+		return (0);
+
+	temp = temp->next->next;
+	revrse = reverse_listint(&temp);
+	midle = revrse;
+
+	temp = *head;
+	while (revrse)
 	{
-		if (arr[x] != arr[ndes - 1 - x])
-		{
-			free(arr);
+		if (temp->n != revrse->n)
 			return (0);
-		}
+		temp = temp->next;
+		revrse = revrse->next;
 	}
-	free(arr);
+	reverse_listint(&midle);
+
 	return (1);
 }

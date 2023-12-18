@@ -32,7 +32,7 @@ void print_python_list(PyObject *p)
 
 	for (x = 0; x < l_size; x++)
 	{
-		l_type = p_list->ob_item[i]->ob_type->tp_name;
+		l_type = p_list->ob_item[x]->ob_type->tp_name;
 		printf("Element %ld: %s\n", x, l_type);
 		if (strcmp(l_type, "bytes") == 0)
 			print_python_bytes(p_list->ob_item[x]);
@@ -70,7 +70,7 @@ void print_python_bytes(PyObject *p)
 	printf("  first %ld bytes: ", b_size);
 	for (x = 0; x < b_size; x++)
 	{
-		printf("%02hhx", b_bytes->ob_sval[i]);
+		printf("%02hhx", b_bytes->ob_sval[x]);
 		if (x == (b_size - 1))
 			printf("\n");
 		else

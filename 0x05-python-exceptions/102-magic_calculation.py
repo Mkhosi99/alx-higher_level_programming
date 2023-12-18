@@ -7,7 +7,7 @@ def magic_calculation(a, b):
                 raise Exception("Value is too large")
             else:
                 answer += (a ** b) / x
-        except ValueError
+        except ValueError:
             answer = b + a
             break
     return (answer)

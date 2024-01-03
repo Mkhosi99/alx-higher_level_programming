@@ -1,0 +1,168 @@
+===================================
+Usage of module 2-matrix_divided.py
+===================================
+
+A matrix division function named "matrix_divided(matrix, div)" is defined.
+
+Use Case
+========
+
+Function "matrix_divided(...)" will return a new matrix that copies the parameter
+"matrix" and divides the elements by the parameter "div".
+
+e.g
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+    >>> matrix = [
+    ...     [2, 4, 6],
+    ...     [10, 14, 16]
+    ... ]
+    >>> print(matrix_divided(matrix, 2))
+    [[1.0, 2.0, 3.0], [5.0, 7.0, 8.0]]
+
+Notice that the quotients are rounded off to a maximum of two decimal places.
+
+e.g
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+The original matrix is also left unchanged.
+
+e.g
+
+    >>> print(matrix)
+    [[1, 2, 3], [4, 5, 6]]
+
+Function can also handle floating-point valuess.
+
+e.g
+
+    >>> matrix = [
+    ...     [2.1, -3.1, 4.1],
+    ...     [5.4, 6.5, -7.6]
+    ... ]
+    >>> print(matrix_divided(matrix, 2))
+    [[1.05, -1.55, 2.05], [2.7, 3.25, -3.8]]
+
+Integers and floats can be also be combined in function.
+
+e.g
+
+    >>> matrix = [
+    ...     [1, -2.4, 3.6, 4.4, 5.4],
+    ...     [-6.2, 7.00, 8.99, 10.0, 11]
+    ... ]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, -1.2, 1.8, 2.2, 2.7], [-3.1, 3.5, 4.5, 5.0, 5.5]]
+
+Invalid Matrixes
+================
+
+Parameter "matrix" must be a list containing either integers and/or
+floats. If "matrix" is not a list, a TypeError will be raised.
+
+e.g
+
+    >>> matrix = "not a listed"
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+e.g
+
+    >>> matrix = "None"
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Notice that an empty or non existent list will raise a TypeError.
+
+e.g
+
+    >>> matrix = []
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+However an empty list of lists will be successful.
+
+e.g
+
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 3))
+    [[]]
+
+A TypeError is also raised if "matrix" is not specifically a list of
+lists.
+
+e.g
+
+    >>> matrix = [1, 2, 3]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+A TypeError is raised again if any elements in "matrix" are
+neither integers and/or floats.
+
+e.g
+
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, "neither", 6]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Lastly, all the rows in "matrix" should be the same size.
+If the rows are different sizes, a new TypeError is raised.
+
+e.g
+
+    >>> matrix = [
+    ...     [2, 3, 4, 5],
+    ...     [6, 7, 8]
+    ... ]
+    >>> print(matrix_divided(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+
+Invalid Division
+================
+
+Parameter "div" must be of int and/or float. 
+If not, a TypeError is raised.
+
+e.g
+
+    >>> matrix = [
+    ...     [2, 3, 4],
+    ...     [5, 6, 7]
+    ... ]
+    >>> print(matrix_divided(matrix, "divide"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+e.g
+
+    >>> print(matrix_divided(matrix, "None"))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+
+Parameter "div" must not be zero. 
+If not, a ZeroDivisionError is raised.
+
+e.g
+
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero

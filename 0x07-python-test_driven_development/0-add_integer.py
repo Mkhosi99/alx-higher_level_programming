@@ -5,7 +5,7 @@ A function that adds 2 intergers/ float is defined
 
 
 def add_integer(a, b=98):
-    """Addition of function a and b should be returned
+    """Addition of arguments a and b should be returned
 
     A float will be typecasted into an interger before addition is performed
 

@@ -20,10 +20,12 @@ queen must be placed on the chessboard.
 
 import sys
 
+
 def initialize_board(size):
     """Initialize an `size`x`size` sized chessboard with empty cells."""
     board = [[' ' for _ in range(size)] for _ in range(size)]
     return board
+
 
 def deepcopy_board(board):
     """Return a deep copy of a chessboard."""
@@ -31,10 +33,12 @@ def deepcopy_board(board):
         return [deepcopy_board(row) for row in board]
     return board
 
+
 def extract_solution(board):
     """Return the list of lists representation of a solved chessboard."""
-    solution = [[r, c] for r, row in enumerate(board) for c, cell in enumerate(row) if cell == 'Q']
-    return solution
+    res = [[r, c] for r, row in enumerate(board) for c, cell in enumerate(row) if cell == 'Q']
+    return res
+
 
 def mark_attacked_spots(board, row, col):
     """Mark spots on a chessboard where queens can no longer be placed."""
@@ -71,6 +75,7 @@ def mark_attacked_spots(board, row, col):
         board[r][c] = 'x'  # Mark diagonally down to the left
         c -= 1
 
+
 def recursive_nqueens(board, current_row, placed_queens, solutions):
     """Recursively solve an N-queens puzzle.
 
@@ -94,6 +99,7 @@ def recursive_nqueens(board, current_row, placed_queens, solutions):
             solutions = recursive_nqueens(tmp_board, current_row + 1, placed_queens + 1, solutions)
 
     return solutions
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

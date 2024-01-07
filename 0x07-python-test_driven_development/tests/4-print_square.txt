@@ -1,0 +1,92 @@
+=================================
+Usage of module 4-print_square.py
+=================================
+
+This module defines a function named `print_square(size)` that prints a square.
+
+Use Case
+========
+
+Squares are printed using the ``#`` character. The parameter ``size``
+represents the height and width of the square.
+
+e.g
+
+    >>> print_square = __import__('4-print_square').print_square
+    >>> print_square(1)
+    #
+
+e.g
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+e.g
+
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+If ``size`` is zero, the function will print nothing.
+
+e.g
+
+    >>> print_square(0)
+
+Invalid Sizes
+=============
+
+The parameter ``size`` must be an integer. If not, a TypeError is raised.
+
+e.g
+
+    >>> print_square("a string")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+e.g
+
+    >>> print_square(4.3)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+e.g
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+If ``size`` is less than zero, a ValueError is raised.
+
+e.g
+
+    >>> print_square(-5)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Note that type-checking occurs before value-checking.
+
+e.g
+
+    >>> print_square(-8.9)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+At least one argument must be provided for function to execute effectively
+
+e.g
+
+    >>> print_square()
+    Traceback (most recent call last):
+    TypeError: print_square() missing 1 required positional argument: 'size'

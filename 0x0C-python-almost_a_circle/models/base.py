@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a base model class."""
+"""Define a Class Base."""
 import json
 import csv
 import turtle
@@ -8,7 +8,7 @@ import turtle
 class Base:
     """Represent the base model.
 
-    Represents the "base" for all other classes in project 0x0C*.
+    This class will be the “base” of all other classes
 
     Attributes:
         __nb_objects (int): The number of instantiated Bases.
@@ -30,7 +30,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Return the JSON serialization of a list of dicts.
+        """Returns the JSON string representation of list_dictionaries
 
         Args:
             list_dictionaries (list): A list of dictionaries.
@@ -41,28 +41,28 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write the JSON serialization of a list of objects to a file.
+        """Writes the JSON string representation of list_objs to a file
 
         Args:
             list_objs (list): A list of inherited Base instances.
         """
-        filename = cls.__name__ + ".json"
-        with open(filename, "w") as jsonfile:
+        fileName = cls.__name__ + ".json"
+        with open(fileName, "w") as jsonFile:
             if list_objs is None:
-                jsonfile.write("[]")
+                jsonFile.write("[]")
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
-                jsonfile.write(Base.to_json_string(list_dicts))
+                jsonFile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the deserialization of a JSON string.
+        """Returns the list of the JSON string representation
 
         Args:
             json_string (str): A JSON str representation of a list of dicts.
         Returns:
-            If json_string is None or empty - an empty list.
-            Otherwise - the Python list represented by json_string.
+            If json_string is None or empty, return an empty list.
+            Otherwise return the Python list represented by json_string.
         """
         if json_string is None or json_string == "[]":
             return []
@@ -93,10 +93,10 @@ class Base:
             If the file does not exist - an empty list.
             Otherwise - a list of instantiated classes.
         """
-        filename = str(cls.__name__) + ".json"
+        fileName = str(cls.__name__) + ".json"
         try:
-            with open(filename, "r") as jsonfile:
-                list_dicts = Base.from_json_string(jsonfile.read())
+            with open(fileName, "r") as jsonFile:
+                list_dicts = Base.from_json_string(jsonFile.read())
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []

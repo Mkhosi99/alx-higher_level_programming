@@ -1,8 +1,6 @@
 0x12. JavaScript - Warm up
 ==========================
 
-- By Dev Nderitu
-- Weight: 1
 
 Background Context
 ------------------
@@ -93,17 +91,12 @@ sudo npm install semistandard --global
 
 ```
 
-Quiz questions
---------------
-
-Show
 
 Tasks
 -----
 
 ### 0\. First constant, first print
 
-mandatory
 
 Write a script that prints "JavaScript is amazing":
 
@@ -126,11 +119,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `0-javascript_is_amazing.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 1\. 3 languages
 
-mandatory
 
 Write a script that prints 3 lines:
 
@@ -155,7 +146,6 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `1-multi_languages.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 2\. Arguments
 
@@ -188,11 +178,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `2-arguments.js`
 
- Done? Help Check your code
 
 ### 3\. Value of my argument
 
-mandatory
 
 Write a script that prints the first argument passed to it:
 
@@ -216,11 +204,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `3-value_argument.js`
 
- Done? Help Check your code
 
 ### 4\. Create a sentence
 
-mandatory
 
 Write a script that prints two arguments passed to it, in the following format: " is "
 
@@ -244,11 +230,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `4-concat.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 5\. An Integer
 
-mandatory
 
 Write a script that prints `My number: <first argument converted in integer>` if the first argument can be converted to an integer:
 
@@ -278,11 +262,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `5-to_integer.js`
 
- Done? Help Check your code
 
 ### 6\. Loop to languages
 
-mandatory
 
 Write a script that prints 3 lines: (like `1-multi_languages.js`) but by using an array of string and a loop
 
@@ -310,11 +292,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `6-multi_languages_loop.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 7\. I love C
 
-mandatory
 
 Write a script that prints `x` times "C is fun"
 
@@ -348,11 +328,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `7-multi_c.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 8\. Square
 
-mandatory
 
 Write a script that prints a square
 
@@ -389,11 +367,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `8-square.js`
 
- Done? Help Check your code
 
 ### 9\. Add
 
-mandatory
 
 Write a script that prints the addition of 2 integers
 
@@ -422,11 +398,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `9-add.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 10\. Factorial
 
-mandatory
 
 Write a script that computes and prints a factorial
 
@@ -456,11 +430,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `10-factorial.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 11\. Second biggest
 
-mandatory
 
 Write a script that searches the second biggest integer in the list of arguments.
 
@@ -487,11 +459,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `11-second_biggest.js`
 
- Done? Help Check your code
 
 ### 12\. Object
 
-mandatory
 
 Update this script to replace the value `12` with `89`:
 
@@ -523,11 +493,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `12-object.js`
 
- Done? Help Check your code Get a sandbox
 
 ### 13\. Add file
 
-mandatory
 
 Write a function that returns the addition of 2 integers.
 
@@ -554,13 +522,10 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `13-add.js`
 
- Done?
 
 ### 14\. Const or not const
 
-# advanced
 
-Score: 0.00% (Checks completed: 0.00%)
 
 Write a file that modifies the value of `myVar` to `333`
 
@@ -590,13 +555,10 @@ Hint: Scope
 - Directory: `0x12-javascript-warm_up`
 - File: `100-let_me_const.js`
 
- Done? Help Check your code QA Review
 
 ### 15\. Call me Moby
 
-# advanced
 
-Score: 0.00% (Checks completed: 0.00%)
 
 Write a function that executes `x` times a function.
 
@@ -625,13 +587,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `101-call_me_moby.js`
 
- Done? Help Check your code Get a sandbox QA Review
 
 ### 16\. Add me maybe
 
-# advanced
-
-Score: 0.00% (Checks completed: 0.00%)
 
 Write a function that increments and calls a function.
 
@@ -658,13 +616,9 @@ guillaume@ubuntu:~/0x12$
 - Directory: `0x12-javascript-warm_up`
 - File: `102-add_me_maybe.js`
 
- Done? Help Check your code Get a sandbox QA Review
 
 ### 17\. Increment object
 
-# advanced
-
-Score: 0.00% (Checks completed: 0.00%)
 
 Update this script by adding a new function `incr` that increments the integer `value`.
 

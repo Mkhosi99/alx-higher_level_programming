@@ -1,30 +1,33 @@
 #!/usr/bin/node
 const request = require('request');
-const url = 'http://swapi.co/api/films/';
-let id = parseInt(process.argv[2], 10);
-let characters = [];
 
-request(url, function (err, response, body) {
-  if (err == null) {
-    const resp = JSON.parse(body);
-    const results = resp.results;
-    if (id < 4) {
-      id += 3;
-    } else {
-      id -= 3;
-    }
-    for (let i = 0; i < results.length; i++) {
-      if (results[i].episode_id === id) {
-        characters = results[i].characters;
-        break;
-      }
-    }
-    for (let j = 0; j < characters.length; j++) {
-      request(characters[j], function (err, response, body) {
-        if (err == null) {
-          console.log(JSON.parse(body).name);
-        }
+const movieId = process.argv[2];
+const movieUrl = `https://swapi.dev/api/films/${movieId}/`;
+
+request(movieUrl, function (error, response, body) {
+  if (error) {
+    console.error(error);
+  } else {
+    const movieData = JSON.parse(body);
+    const characterPromises = movieData.characters.map((characterUrl) => {
+      return new Promise((resolve, reject) => {
+        request(characterUrl, function (err, res, bd) {
+          if (err) {
+            reject(new Error(err));
+          } else {
+            const characterData = JSON.parse(bd);
+            resolve(characterData.name);
+          }
+        });
       });
-    }
+    });
+
+    Promise.all(characterPromises)
+      .then((characterNames) => {
+        console.log(characterNames.join('\n'));
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   }
 });
